@@ -17,14 +17,12 @@
 
 int	main(int argc, char **argv)
 {
+  system("clear");
   srand(time(NULL));
   if (argc == 3)
     {
       if (my_strcmp(argv[1], "-n") == 0)
 	{
-	  my_putstr("Votre aventure commence ");
-	  my_putstr(argv[2]);
-	  my_putstr("\n");
 	  start(argv[2]);
 	}
       else

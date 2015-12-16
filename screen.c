@@ -12,16 +12,18 @@
 
 void	my_welcome_msg(char *name)
 {
+  my_putstr(BOLDWHITE);
   my_putstr("\n\n---------------------------------------------------\n");
-  my_putstr("\033[0;37m***************************************************");
-  my_putstr("\n**********\033[0m");
+  my_putstr(RED);
+  my_putstr("***************************************************");
+  my_putstr("\n*****");
+  my_putstr(BOLDWHITE);
   my_putstr("\033[1;37mWelcome ");
   my_putstr(name);
-  my_putstr(", a new adventure will start\033[0m\033[0;37m**********\n");
-  my_putstr("***************************************************\033[0m");
-  my_putstr("\n---------------------------------------------------\n");
-  my_putstr("\033[1;37m                        ||\n");
-  my_putstr("\033[1;37m                        ||\033[0m\n");
-  my_putstr("\033[1;37m                        ||\n");
-  my_putstr("\033[1;37m                        ||\033[0m\n");
+  my_putstr(", a new adventure will start");
+  my_putstr(BOLDRED);
+  my_putstr("*****\n***************************************************\033[0m");
+  my_putstr(BOLDWHITE);
+  my_putstr("\n---------------------------------------------------\n\n\n");
+  my_putstr(RESET);
 }

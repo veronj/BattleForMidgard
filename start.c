@@ -18,11 +18,16 @@ int		start(char *name)
   
   creature = NULL;
   my_welcome_msg(name);
-  creature = getCreature();  
+  creature = getCreature();
+  my_putstr(BOLDRED);
   my_putstr("Vous rencontrez un ennemi : ");
+  my_putstr(RED);
   my_putstr(creature->name);
+  my_putstr(BOLDWHITE);
   my_putstr("\nQue faites vous?\nFuir(help me !!!), Capturer(magic catch), Quitter le jeu(quit).\n");
+  my_putstr(BOLDBLUE);
   choice = readLine();
+  my_putstr(RESET);
   if (my_strcmp(choice, "quit") == 0)
     {
       my_putstr("Au revoir.\n");

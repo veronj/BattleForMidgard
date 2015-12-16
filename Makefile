@@ -11,6 +11,7 @@
 CC = gcc
 NAME = sta
 SRC = 	main.c \
+		screen.c \
 	readline.c
 
 OBJ = $(SRC:%.c=%.o)

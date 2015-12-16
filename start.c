@@ -15,7 +15,6 @@
 int		start(char *name)
 {
   t_creature	*creature;
-  char		*choice; 
   
   creature = NULL;
   my_welcome_msg(name);
@@ -24,21 +23,35 @@ int		start(char *name)
   my_putstr("Vous rencontrez un ennemi : ");
   my_putstr(RED);
   my_putstr(creature->name);
+  choices();
+  return (0);
+}
+
+int	choices()
+{
+  int		test;
+  char		*choice;
+  
   my_putstr(BOLDWHITE);
-  my_putstr("\nQue faites vous?\nFuir(help me !!!), Capturer(magic catch), Quitter le jeu(quit).\n");
-  my_putstr(BOLDBLUE);
-  choice = readLine();
-  my_putstr(RESET);
-  if (my_strcmp(choice, "quit") == 0)
+  do {
+	test = 1;
+	my_putstr("\nQue faites vous?\nFuir(help me !!!), Capturer(magic catch), Quitter le jeu(quit).\n");
+	my_putstr(BOLDBLUE);
+	choice = readLine();
+	my_putstr(BOLDWHITE);
+	if (my_strcmp(choice, "quit") == 0)
     {
-      my_putstr("Au revoir.\n");
-      return (0);
+      my_putstr("\n\nThanks, see you soon!\n");
     }
-  else if (my_strcmp(choice, "help me !!!") == 0)
-      my_putstr("FUIR TODO\n");
-  else if (my_strcmp(choice, "magic catch") == 0)
-      my_putstr("CAPTURE TODO\n");
-  else
-      return (0);
+	else if (my_strcmp(choice, "help me !!!") == 0)
+	  my_putstr("FUIR TODO\n");
+	else if (my_strcmp(choice, "magic catch") == 0)
+	  my_putstr("CAPTURE TODO\n");
+	else {
+	  test = 0;
+	  my_putstr("Wrong answer ...\n");
+	}
+  } while (test != 1);
+  my_putstr(RESET);
   return (0);
 }

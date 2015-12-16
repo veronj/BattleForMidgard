@@ -24,6 +24,7 @@ typedef struct  s_creature
 
 t_creature	*getCreature();
 void		my_welcome_msg(char *name);
+int			choices();
 int	start(char *name);
 
 #endif /* FUNCTIONS_H_ */

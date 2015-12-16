@@ -5,14 +5,16 @@
 ## Login   <veron_j@etna-alternance.net>
 ## 
 ## Started on  Wed Dec 16 09:50:05 2015 VERON Jean-baptiste
-## Last update Wed Dec 16 10:52:42 2015 VERON Jean-baptiste
+## Last update Wed Dec 16 11:09:22 2015 VERON Jean-baptiste
 ##
 
 CC = gcc
 NAME = sta
 SRC = 	main.c \
 	readline.c \
-	start.c
+	start.c \
+	screen.c 
+
 
 OBJ = $(SRC:%.c=%.o)
 CFLAGS = -W -Wall -Werror

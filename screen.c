@@ -24,6 +24,6 @@ void	my_welcome_msg(char *name)
   my_putstr(BOLDRED);
   my_putstr("*****\n***************************************************\033[0m");
   my_putstr(BOLDWHITE);
-  my_putstr("\n---------------------------------------------------\n\n\n");
+  my_putstr("\n---------------------------------------------------\n");
   my_putstr(RESET);
 }

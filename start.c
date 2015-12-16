@@ -14,22 +14,33 @@
 
 int		start(char *name)
 {
+  int			state;
   t_creature	*creature;
   
   creature = NULL;
   my_welcome_msg(name);
-  creature = getCreature();
-  my_putstr(BOLDRED);
-  my_putstr("Vous rencontrez un ennemi : ");
-  my_putstr(RED);
-  my_putstr(creature->name);
-  creature = choices(creature);
-  if (creature == NULL)
-	  my_putstr("You have no monster\n");
+  state = 2;
+  while (state != -1)
+  {
+	creature = getCreature();
+	my_putstr(BOLDRED);
+	my_putstr("\n\nVous rencontrez un ennemi : ");
+	my_putstr(RED);
+	my_putstr(creature->name);
+	state = choices();
+	if (state == -1)
+    {
+      my_putstr("\n\nThanks, see you soon!\n");
+    }
+	else if (state == 0)
+	  my_putstr("U RUUUUUUUN!\n");
+	else if (state == 1)
+	  my_putstr("CATCH MEEEEEE!\n");
+  }
   return (0);
 }
 
-t_creature	*choices(t_creature *creature)
+int		choices()
 {
   int		test;
   char		*choice;
@@ -42,18 +53,16 @@ t_creature	*choices(t_creature *creature)
 	choice = readLine();
 	my_putstr(BOLDWHITE);
 	if (my_strcmp(choice, "quit") == 0)
-    {
-      my_putstr("\n\nThanks, see you soon!\n");
-    }
+	  return (-1);
 	else if (my_strcmp(choice, "help me !!!") == 0)
-	  my_putstr("U RUUUUUUUN!\n");
+	  return (0);
 	else if (my_strcmp(choice, "magic catch") == 0)
-	  return (creature = NULL);
+	  return (1);
 	else {
 	  test = 0;
 	  my_putstr("Wrong answer ...\n");
 	}
   } while (test != 1);
   my_putstr(RESET);
-  return (0);
+  return (-1);
 }

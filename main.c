@@ -5,16 +5,19 @@
 ** Login   <veron_j@etna-alternance.net>
 ** 
 ** Started on  Wed Dec 16 09:27:18 2015 VERON Jean-baptiste
-** Last update Wed Dec 16 10:47:47 2015 VERON Jean-baptiste
+** Last update Wed Dec 16 14:02:43 2015 VERON Jean-baptiste
 */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "my_lib.h"
 #include "functions.h"
 
 int	main(int argc, char **argv)
 {
+  srand(time(NULL));
   if (argc == 3)
     {
       if (my_strcmp(argv[1], "-n") == 0)

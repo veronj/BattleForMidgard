@@ -5,9 +5,10 @@
 ** Login   <veron_j@etna-alternance.net>
 ** 
 ** Started on  Wed Dec 16 10:50:58 2015 VERON Jean-baptiste
-** Last update Wed Dec 16 12:45:23 2015 VERON Jean-baptiste
+** Last update Wed Dec 16 13:40:09 2015 VERON Jean-baptiste
 */
 
+#include <unistd.h>
 #include "functions.h"
 #include "my_lib.h"
 

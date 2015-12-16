@@ -23,11 +23,13 @@ int		start(char *name)
   my_putstr("Vous rencontrez un ennemi : ");
   my_putstr(RED);
   my_putstr(creature->name);
-  choices();
+  creature = choices(creature);
+  if (creature == NULL)
+	  my_putstr("You have no monster\n");
   return (0);
 }
 
-int	choices()
+t_creature	*choices(t_creature *creature)
 {
   int		test;
   char		*choice;
@@ -44,9 +46,9 @@ int	choices()
       my_putstr("\n\nThanks, see you soon!\n");
     }
 	else if (my_strcmp(choice, "help me !!!") == 0)
-	  my_putstr("FUIR TODO\n");
+	  my_putstr("U RUUUUUUUN!\n");
 	else if (my_strcmp(choice, "magic catch") == 0)
-	  my_putstr("CAPTURE TODO\n");
+	  return (creature = NULL);
 	else {
 	  test = 0;
 	  my_putstr("Wrong answer ...\n");

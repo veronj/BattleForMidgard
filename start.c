@@ -5,7 +5,7 @@
 ** Login   <veron_j@etna-alternance.net>
 ** 
 ** Started on  Wed Dec 16 10:50:58 2015 VERON Jean-baptiste
-** Last update Wed Dec 16 13:40:09 2015 VERON Jean-baptiste
+** Last update Wed Dec 16 19:09:59 2015 VERON Jean-baptiste
 */
 
 #include <unistd.h>
@@ -35,7 +35,7 @@ int		start(char *name)
 	else if (state == 0)
 	  my_putstr("U RUUUUUUUN!\n");
 	else if (state == 1)
-	  my_putstr("CATCH MEEEEEE!\n");
+	  capture(&creature);
   }
   return (0);
 }

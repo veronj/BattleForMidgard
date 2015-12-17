@@ -5,7 +5,7 @@
 ** Login   <veron_j@etna-alternance.net>
 ** 
 ** Started on  Wed Dec 16 10:50:58 2015 VERON Jean-baptiste
-** Last update Wed Dec 16 19:09:59 2015 VERON Jean-baptiste
+** Last update Thu Dec 17 12:01:25 2015 VERON Jean-baptiste
 */
 
 #include <unistd.h>
@@ -24,7 +24,7 @@ int		start(char *name)
   {
 	creature = getCreature();
 	my_putstr(BOLDRED);
-	my_putstr("\n\nVous rencontrez un ennemi : ");
+	my_putstr("\n\nAn enemy is facing you : ");
 	my_putstr(RED);
 	my_putstr(creature->name);
 	state = choices();
@@ -35,7 +35,7 @@ int		start(char *name)
 	else if (state == 0)
 	  my_putstr("U RUUUUUUUN!\n");
 	else if (state == 1)
-	  capture(&creature);
+	  state = capture(&creature);
   }
   return (0);
 }
@@ -48,7 +48,7 @@ int		choices()
   my_putstr(BOLDWHITE);
   do {
 	test = 1;
-	my_putstr("\nQue faites vous?\nFuir(help me !!!), Capturer(magic catch), Quitter le jeu(quit).\n");
+	my_putstr("\nWhat are you gonna do?\nEscape(help me !!!), Try to catch it(magic catch), Quit the game(quit).\n");
 	my_putstr(BOLDBLUE);
 	choice = readLine();
 	my_putstr(BOLDWHITE);

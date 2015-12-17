@@ -5,7 +5,7 @@
 ** Login   <veron_j@etna-alternance.net>
 ** 
 ** Started on  Wed Dec 16 10:48:04 2015 VERON Jean-baptiste
-** Last update Wed Dec 16 21:44:37 2015 VERON Jean-baptiste
+** Last update Thu Dec 17 11:44:31 2015 VERON Jean-baptiste
 */
 
 #ifndef FUNCTIONS_H_
@@ -21,16 +21,22 @@ typedef struct  s_creature
   int           pmmax;
 }               t_creature;
 
+typedef struct s_team
+{
+  struct s_team         *next;
+  struct s_creature     *crea;
+}			t_team;
+
 typedef struct		s_player
 {
   char			*name;
-  struct t_histo	*list_crea;
+  struct t_team         *team;
 }			t_player;
+ 
 
+int aff_list(t_team *team);
 
-
-int aff_list(t_creature *list);
-int add_crea(t_creature **list, t_creature **creature);
+int add_crea(t_team **team, t_creature **creature);
 t_creature	*getCreature();
 void		my_welcome_msg(char *name);
 int capture(t_creature **creature);

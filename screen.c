@@ -13,17 +13,19 @@
 void	my_welcome_msg(char *name)
 {
   my_putstr(BOLDWHITE);
-  my_putstr("\n\n---------------------------------------------------\n");
+  my_putstr("\n\n-------------------------------------------------------\n");
   my_putstr(RED);
-  my_putstr("***************************************************");
-  my_putstr("\n*****");
+  my_putstr("*******************************************************");
+  my_putstr("\n*************");
   my_putstr(BOLDWHITE);
+  my_putstr("Welcome to Battle for Midgard");
+  my_putstr(BOLDRED);
+  my_putstr("*************\n");
+  my_putstr("*******************************************************\033[0m");
+  my_putstr(BOLDWHITE);
+  my_putstr("\n-------------------------------------------------------\n\n");
   my_putstr("\033[1;37mWelcome ");
   my_putstr(name);
-  my_putstr(", a new adventure will start");
-  my_putstr(BOLDRED);
-  my_putstr("*****\n***************************************************\033[0m");
-  my_putstr(BOLDWHITE);
-  my_putstr("\n---------------------------------------------------\n");
+  my_putstr(", a new adventure will start...\n\n\n\n");
   my_putstr(RESET);
 }
